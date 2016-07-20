@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="1" disabled="0" errors="0" timestamp="2016-06-09T09:43:55" time="0.002" name="AllTests">
+  <testsuite name="LFCommFrameTestFixture" tests="2" failures="1" disabled="0" errors="0" time="0.002">
+    <testcase name="testLFCommFrameCreation" status="run" time="0.001" classname="LFCommFrameTestFixture" />
+    <testcase name="testLFCommCreation" status="run" time="0.001" classname="LFCommFrameTestFixture">
+      <failure message="LFCommFrameTestFixture.cpp:209&#x0A;Value of: 0x0002&#x0A;  Actual: 2&#x0A;Expected: mp_LFCommCommandFrame-&gt;getLFCommand()&#x0A;Which is: 8192" type=""><![CDATA[LFCommFrameTestFixture.cpp:209
+Value of: 0x0002
+  Actual: 2
+Expected: mp_LFCommCommandFrame->getLFCommand()
+Which is: 8192]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

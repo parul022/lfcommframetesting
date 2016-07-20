@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <!-- Output the log messages to the system console.
+    -->
+    <appender name="testConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+	
+    <!-- Output the log messages to a log file.
+    -->
+    <appender name="testRollingAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="/home/lfuser/work/lfcommframe_test/logs/parul.log" />
+        <param name="append" value="true" />
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="5" />
+	    <param name="ImmediateFlush" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %C{2} (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="parul" additivity="false">
+        <!-- Note that the Hercules system-wide Logging Level parameter will be overridden if you set the "level" parameter here.
+		<level value ="info" />
+		-->
+        <appender-ref ref="testConsoleAppender"/>
+        <appender-ref ref="testRollingAppender"/>
+    </logger>     
+
+    <root>
+        <!-- Note that the Hercules system-wide Logging Level parameter will be overridden if you set the "level" parameter here.
+		<level value="all" additivity="false"/>
+		-->
+        <appender-ref ref="testConsoleAppender"/>
+        <appender-ref ref="testRollingAppender"/>
+    </root>
+</log4j:configuration>
+
